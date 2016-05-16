@@ -1,15 +1,15 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I love to write software - I find the entire process very interesting and rewarding.
+As such, I'm constantly pushing myself to become a better software engineer.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+I've been writing software for the better part of 16 years, and professionally for 10 of those.
+I currently work at [The Nerdery](http://nerdery.com) (KC) as a Principle Software Engineer in the JVM discipline.
+The majority of my professional experience has been in Java, but I've also worked in JavaScript, Python, Clojure,
+Scala, Groovy, and Ruby (among others).
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+Aside from coding, I love being a dad, a husband, and a long-distance runner :)
