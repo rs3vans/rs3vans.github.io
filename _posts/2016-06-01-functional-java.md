@@ -28,5 +28,46 @@ This means we have lots of opportunities to apply these functional concepts.
 ## Examples
 Enough talk. Let's see some examples of what I'm talking about...
 
-# Scenario 1: The Basics
+# Scenario 1: Streaming Basics
+One of the most common patterns I've encountered in my years of writing code - no matter the language - is that of taking a collection of one thing,
+and transforming it into a collection of something else. Here's a traditional example of something like this in Java:
 
+{% highlight java %}
+/**
+ * Converts a list of numbers to a list of strings.
+ */
+public List<String> convertNumbersToStrings(List<Integer> numbers) {
+    List<String> strings = new ArrayList<>(numbers.size());
+    for (Integer number : numbers) {
+        strings.add(number.toString());
+    }
+    return strings;
+}
+{% endhighlight %}
+
+"What's wrong with this approach?" you might ask. Well, it's not so much that it's _wrong_, only that it could be _better_. The code itself isn't very
+expressive. We spend extra characters dealing with _how_ we're doing it, and that tends to obfuscate _what_ we're trying to do.
+
+* The first line is dealing entirely with creating a new container for the result of the operation which looks just like the input container, but
+holds a different type.
+* The second line verbosely expresses that we want to do something to each item in the input container.
+* The third line finally deals with the conversion from Integer to String, but it's also muddied by adding the result of that conversion to our result
+container
+* The last line separatey expresses that we want to return the result container.
+
+Obviously, this is a pretty simple example (and one which I have perhaps overly picked apart), but if it were more complex, it would get much harder
+to "read" what was going on. What if we expressed this in a functional way (using streaming operations)?
+
+{% highlight java %}
+/**
+ * Converts a list of numbers to a list of strings.
+ */
+public List<String> convertNumbersToStringsFunctionally(List<Integer> numbers) {
+    return numbers.stream()
+            .map(Object::toString)
+            .collect(Collectors.toList());
+}
+{% endhighlight %}
+
+As you can see, the code reads much more of _what_, and a lot less of _how_. The entire operation is expressed as a single functional statement ad it
+"flows" from one step to the next, making it much more readable.
